@@ -2,7 +2,7 @@
 
 class Inventory{
     private:
-    int items;
+    Item* items;
     int capacity;
     int itemCount;
 

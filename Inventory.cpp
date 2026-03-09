@@ -1,10 +1,16 @@
 #include "Inventory.h" 
 
-Inventory(int capacity){
+Inventory::Inventory(int capacity){
     this->capacity = capacity;
-    items = 0;
-    
+    itemCount = 0;
+    items = new Item[capacity];
 }
-~Inventory();
-bool addItem(const Item& item);
-void display() const;
+Inventory::~Inventory(){
+    delete[] items;
+}
+bool Inventory::addItem(const Item& item){
+    if(capacity > itemCount){
+        items[itemCount] = item;
+    }
+}
+void Inventory::display() const;
