@@ -1,3 +1,6 @@
+#ifndef INVENTORY_H
+#define INVENTORY_H
+
 #include "Item.h"
 
 class Inventory{
@@ -7,8 +10,10 @@ class Inventory{
     int itemCount;
 
     public:
-    Inventory(int capacity);
+    Inventory(int capacity = 10);
     ~Inventory();
     bool addItem(const Item& item);
     void display() const;
-}
+};
+
+#endif

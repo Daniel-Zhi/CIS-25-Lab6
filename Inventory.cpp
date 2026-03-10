@@ -11,6 +11,18 @@ Inventory::~Inventory(){
 bool Inventory::addItem(const Item& item){
     if(capacity > itemCount){
         items[itemCount] = item;
+        Item::incrementTotalItems();
+        itemCount++;
+        cout << "\nAn item was found: [" << item.getname() << "] (Value: " << item.getvalue() <<")" <<endl; 
+        return true;
+    }
+    else 
+        return false;
+}
+void Inventory::display() const{
+    cout << "\nInventory (" << itemCount << "/" << capacity <<") :" << endl;
+    for(int i = 0; i < itemCount; i++){
+        items[i].display();
+        cout << endl;
     }
 }
-void Inventory::display() const;

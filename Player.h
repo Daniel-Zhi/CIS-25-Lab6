@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "Inventory.h"
 using namespace std;
 
 class Player{
@@ -12,16 +13,19 @@ class Player{
     int health;
     int maxHealth;
     int attackPower;
+    Inventory inventory;
 
     public:
     Player();
-    Player(string name, int health, int attackPower);
+    Player(int capasity, string name, int health, int attackPower);
     void takeDamage(int damage);
     string getname() const;
     int gethealth() const;
     int getmaxHealth() const;
     int getattackPower() const;
     void displayStatus() const;
+    void showInventory() const;
+    void addItem(const Item& item);
     ~Player();
 };
 

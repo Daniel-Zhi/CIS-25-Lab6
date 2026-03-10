@@ -1,22 +1,22 @@
 #include "Item.h"
 
-Item::totalItems = 0; 
-Item(string name = "Scrap", int value = 0){
-    
+int Item::totalItems = 0; 
+Item::Item(string name, int value){
+    this->name = name;
+    this->value = value;
 }
-int getTotalItems(){
+int Item::getTotalItems(){
     return totalItems;
 }
-void incrementTotalItems(){
-    cout << "An item was added: [" << name << "]"; 
-    itemCount++;
+void Item::incrementTotalItems(){
+    totalItems++;
 }
-string getname() const{
+string Item::getname() const{
     return name;
 }
-int getvalue() const{
+int Item::getvalue() const{
     return value;
 }
-void display() const{
-    cout<< "[" << name <<"] (Value: [" << value <<"]"; 
+void Item::display() const{
+    cout<< "[" << name <<"] (Value: [" << value <<"])"; 
 }

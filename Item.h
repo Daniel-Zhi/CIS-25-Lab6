@@ -1,4 +1,8 @@
+#ifndef ITEM_H
+#define ITEM_H
+
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Item{
@@ -9,10 +13,12 @@ class Item{
     int value;
 
     public:
-    Item(std::string name = "Scrap", int value = 0);
+    Item(string name = "Scrap", int value = 0);
     static int getTotalItems();
     static void incrementTotalItems();
     string getname() const;
     int getvalue() const;
     void display() const;
 };
+
+#endif
