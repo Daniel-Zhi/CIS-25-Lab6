@@ -10,6 +10,8 @@ class Player{
     private:
 
     string name;
+    int x;
+    int y;
     int health;
     int maxHealth;
     int attackPower;
@@ -17,7 +19,11 @@ class Player{
 
     public:
     Player();
-    Player(int capasity, string name, int health, int attackPower);
+    Player(int capasity, string name, int health, int attackPower, int x, int y);
+    int getX() const;
+    int getY() const;
+    void setX(int x);
+    void setY(int y);
     void takeDamage(int damage);
     string getname() const;
     int gethealth() const;
