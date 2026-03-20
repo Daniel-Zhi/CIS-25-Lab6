@@ -1,30 +1,19 @@
-#include "Player.h"
+#include "Game.h"
+#include <iostream>
 #include <cstdlib>
 
 
 int main(){
-    srand(time(0));
-    Player hero(10, "Danjun", 100, 20);
-    hero.showInventory();
-    Item i1("Cat_of_Uncertainty", rand());
-    Item::incrementTotalItems();
-    hero.addItem(i1);
-    hero.showInventory();
-    Item i2("Fallen_Apple", 980);
-    Item::incrementTotalItems();
-    hero.addItem(i2);
-    hero.showInventory();
-    Item i3("Dark_Sphere", 888888);
-    Item::incrementTotalItems();
-    Item i4("Staff_Of_Gunpowder", 662);
-    Item::incrementTotalItems();
-    hero.addItem(i4);
-    hero.showInventory();
-    Item i5;
-    Item::incrementTotalItems();
-    hero.addItem(i5);
-    hero.showInventory();
+    try{
+        Game g1;
+        g1.run();
+        Game costum_g2(10, "Dumbodoor", 210, 90, 4,4, 30, 30);
+        costum_g2.run();
+    }
 
+    catch(const exception& error) {
+        cerr << "Error: " <<error.what() << endl;
+    }
 
 
 }
